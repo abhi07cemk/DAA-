@@ -32,7 +32,7 @@ int main()
 {
     int adj[10][10], n, i, j;
 
-    printf("Enter Size of Adjacency Matrix: ");
+    printf("Enter Number of Vertices : ");
     scanf("%d", &n);
 
     printf("Enter the adjacency matrix:\n");
