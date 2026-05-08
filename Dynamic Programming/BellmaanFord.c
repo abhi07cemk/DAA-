@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define INF 999
+// #define INF 999
 
 void BF(int adj[][10], int n)
 {
