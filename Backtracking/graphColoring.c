@@ -65,7 +65,7 @@ int main()
             scanf("%d", &graph[i][j]);
         }
     }
-
+    printf("\n");
     GraphColoring(1, n, m, graph);
 
     printf("\nTotal Number of Solutions = %d\n", count);
