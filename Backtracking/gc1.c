@@ -5,6 +5,39 @@
 int x[MAX];
 int count = 0;
 
+int place(int k, int i, int graph[][MAX]);
+void GraphColoring(int k, int n, int m, int graph[][MAX]);
+
+int main()
+{
+    int n, m;
+    int graph[MAX][MAX];
+
+    printf("Enter Number of Vertices : ");
+    scanf("%d", &n);
+
+    printf("Enter Number of Colors : ");
+    scanf("%d", &m);
+
+    printf("Enter Adjacency Matrix :\n");
+
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= n; j++)
+        {
+            scanf("%d", &graph[i][j]);
+        }
+    }
+
+    printf("\n");
+
+    GraphColoring(1, n, m, graph);
+
+    printf("\nTotal Number of Solutions = %d\n", count);
+
+    return 0;
+}
+
 int place(int k, int i, int graph[][MAX])
 {
     for(int j = 1; j <= k - 1; j++)
@@ -43,32 +76,4 @@ void GraphColoring(int k, int n, int m, int graph[][MAX])
             }
         }
     }
-}
-
-int main()
-{
-    int n, m;
-    int graph[MAX][MAX];
-
-    printf("Enter Number of Vertices : ");
-    scanf("%d", &n);
-
-    printf("Enter Number of Colors : ");
-    scanf("%d", &m);
-
-    printf("Enter Adjacency Matrix :\n");
-
-    for(int i = 1; i <= n; i++)
-    {
-        for(int j = 1; j <= n; j++)
-        {
-            scanf("%d", &graph[i][j]);
-        }
-    }
-    printf("\n");
-    GraphColoring(1, n, m, graph);
-
-    printf("\nTotal Number of Solutions = %d\n", count);
-
-    return 0;
 }
