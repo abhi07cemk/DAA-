@@ -16,7 +16,7 @@ int findSet()
     printf("Enter Array Size : ");
     scanf("%d", &n);
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("Enter Elements %d : ", i + 1);
         scanf("%d", &arr[i]);
@@ -25,9 +25,9 @@ int findSet()
     printf("Enter Element to Search : ");
     scanf("%d", &target);
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(arr[i] == target)
+        if (arr[i] == target)
         {
             printf("Element Found!\n");
             printf("Set Representative = %d\n", arr[0]);
@@ -116,7 +116,7 @@ int extract_min()
     printf("Enter Array Size : ");
     scanf("%d", &n);
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("Enter Elements %d : ", i + 1);
         scanf("%d", &arr[i]);
@@ -125,9 +125,9 @@ int extract_min()
     int min = arr[0];
     int pos = 0;
 
-    for(int i = 1; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
-        if(arr[i] < min)
+        if (arr[i] < min)
         {
             min = arr[i];
             pos = i;
@@ -136,45 +136,51 @@ int extract_min()
 
     printf("Minimum Element = %d\n", min);
 
-    for(int i = pos; i < n - 1; i++)
+    for (int i = pos; i < n - 1; i++)
     {
         arr[i] = arr[i + 1];
     }
 
-    n--;  
+    n--;
 
     printf("Array after Extracting Min : ");
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
     }
 
-    return min;   
+    return min;
 }
 
 int main()
 {
     int ch;
 
-    while(1)
+    while (1)
     {
         printf("\n 1. Make Set \n 2. Find Set \n 3. Union \n 4. Extract Min \n 5. Exit \n");
         printf("Enter Your Choice : ");
         scanf("%d", &ch);
 
-        switch(ch)
+        switch (ch)
         {
-            case 1 : makeSet();
-                     break;
-            case 2 : findSet();
-                     break;
-            case 3 : unionSet();
-                     break;
-            case 4 : extract_min();
-                     break;
-            case 5 : exit(1);
-                     break;
-            default : printf("Invalid Choice!");
+        case 1:
+            makeSet();
+            break;
+        case 2:
+            findSet();
+            break;
+        case 3:
+            unionSet();
+            break;
+        case 4:
+            extract_min();
+            break;
+        case 5:
+            exit(1);
+            break;
+        default:
+            printf("Invalid Choice!");
         }
     }
 }
